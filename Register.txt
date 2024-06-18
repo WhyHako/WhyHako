@@ -1,0 +1,24 @@
+    User User = new User()
+    {
+        First_Name = FNTextBox.Text,
+        Middle_Name = MNTextBox.Text,
+        Last_Name = LNTextBox.Text,
+        ID_Type_User = 1
+    };
+
+    SibCemEntities.getContext().User.Add(User);
+    SibCemEntities.getContext().SaveChanges();
+
+    LoginWindow lw = new LoginWindow();
+    lw.Show();
+    this.Close();
+а также:
+                    int phone;
+                    if (int.TryParse(PhoneTextBox.Text, out phone))
+                    {
+			!!!!!!!!!!КОД
+		    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка: Номер телефона должен быть числом.");
+                    }

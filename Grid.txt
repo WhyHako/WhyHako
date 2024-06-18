@@ -1,0 +1,14 @@
+private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+{
+    if (Visibility == Visibility.Visible)
+    {
+        SibCemEntities.getContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+
+        var orders = SibCemEntities.getContext().Order
+        .Include(o => o.User)
+        .Include(o => o.Status_Order)
+        .ToList();
+
+        OrderGrid.ItemsSource = orders;
+    }
+}

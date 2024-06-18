@@ -1,0 +1,8 @@
+private static SibCemEntities _context;
+
+public static SibCemEntities getContext()
+{
+    if (_context == null)
+        _context = new SibCemEntities();
+    return _context;
+}
